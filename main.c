@@ -22,9 +22,9 @@ char words[][WORDS_LENGTH] =    {
                                 "Wild animal"
                                 };
 
-int printMenu(void);
+void printMenu(void);
 
-int printHangman(int choice);
+void printHangman(int choice);
 
 int main()
 
@@ -109,7 +109,7 @@ int main()
                             if( charChoice[0] != words[random][i] ) {
                                 wrongLoopChar++;
                             }
-                            
+
                     }
 
                     if(wrongLoopChar == choosedWordLength) {
@@ -131,12 +131,12 @@ int main()
 
 
                     for(i = 0; i < choosedWordLength; i++) {
-                            
+
                         printf(" %c ", guessWord[i]);
-                        
+
                     }
 
-                    if(wrongChar == 5){ 
+                    if(wrongChar == 5){
                         printf("\n\n - - - - - You Lose! - - - - - -");
                     } else if(succesChar == choosedWordLength) {
                         printf("\n\n - - - - - You Win! - - - - - -");
@@ -153,11 +153,11 @@ int main()
             } else {
 
                 printf("\n\n --- Invalid choice ---\n");
-                
+
                 if(isalpha(menuChoice) != 0 ) {
 
                 printf(" -- This is not number! -- ");
-                
+
                 }
             }
 
@@ -166,8 +166,8 @@ int main()
     return 0;
 }
 
-printMenu(void) {
- 
+void printMenu(void) {
+
     printf("\n\n--------------HANGMAN----------------");
     printf("\n\n -- 1. Press 1 to start new game -- ");
     printf("\n -- 2. Press 0 to quit from game -- ");
@@ -177,7 +177,7 @@ printMenu(void) {
 }
 
 
-printHangman(int wrongChar) {
+void printHangman(int wrongChar) {
                     /*
                     if(wrongChar == 0){
                         printf("   \n");
